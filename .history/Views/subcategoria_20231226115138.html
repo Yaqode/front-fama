@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="apple-touch-icon" href="img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="./../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../css/templatemo.css">
+    <link rel="stylesheet" href="./../css/style.css">
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="./../css/fontawesome.min.css" >
+</head>
+<body>
+
+
+
+
+
+<!-- Modal para agregar subcategorias -->
+<div class="modal fade" id="modalSubcategorias" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Subcategorias</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulario para agregar subcategoria -->
+                <form id="subcategoriaForm">
+                    <div class="mb-3">
+                        <label for="subcategoriaInput" class="form-label">Nombre de la subcategoria:</label>
+                        <input type="text" class="form-control" id="subcategoriaInput" required>
+                    </div>
+                    <div class="mb-3 d-flex justify-content-center align-items-center">
+                        <label for="categoriasSelect" class="form-label me-3">Categoría:</label>
+                        <select class="form-select me-3" id="categoriasSelect" required>
+                            <!-- Las opciones de categorías se agregarán dinámicamente aquí -->
+                        </select>
+                        <a href="../Views/categoria.php" class="btn btn-success">Agregar Categorías</a>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="guardarSubcategorias()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para editar categorias -->
+<div class="modal fade" id="modalEditarSubcategorias" tabindex="-1" role="dialog" aria-labelledby="modalEditarSubcategoriasLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Subcategorias</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulario para edtar subcategorias -->
+                <form id="SubcategoriaForm">
+                    <div class="mb-3">
+                        <label for="subcategoriaInput" class="form-label">Nombre de la subcategoria:</label>
+                        <input type="text" class="form-control" id="subcategoriaInput" required>
+                    </div>
+                    <div class="mb-3 d-flex justify-content-center align-items-center">
+                        <label for="categoriaSelect" class="form-label me-3">Categoria:</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="editarSubcategorias()">Editar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para eliminar subcategorías -->
+<div class="modal fade" id="modalEliminarSubcategorias" tabindex="-1" role="dialog" aria-labelledby="modalEliminarSubcategoriasLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEliminarSubcategoriasLabel">Eliminar Subcategoría</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Deseas eliminar esta subcategoría?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <!-- Llama a la función eliminarSubcategoria al hacer clic en el botón de Eliminar -->
+                <button type="button" class="btn btn-danger" onclick="eliminarSubcategoria()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Agrega los enlaces a Bootstrap JS y Popper.js -->
+<script src="./../js/jquery-1.11.0.min.js"></script>
+<script src="./../js/bootstrap.bundle.min.js"></script>
+<script src="./../js/jquery-migrate-1.2.1.min.js"></script>
+<script src="./../js/funciones_js/subcategorias.js"></script>
+<script src="./../js/funciones_js/header.js"></script>
+<script src="./../js/templatemo.js"></script>
+<script src="./../js/custom.js"></script>
+
+
+</body>
+</html>

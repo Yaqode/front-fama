@@ -1,0 +1,121 @@
+document.addEventListener("DOMContentLoaded", function () {
+    // Llenar el menú desplegable de subcategorías al cargar la página
+    cargarSubcategorias();
+    $('#subcategoriaCombo').select2();
+
+    // Función para cargar subcategorías desde la API
+    function cargarSubcategorias() {
+        $.ajax({
+            url: 'http://localhost:8090/fama-market/api/subcategories/all',
+            type: 'GET',
+            success: function (data) {
+                // Limpiar opciones existentes en el menú desplegable
+                $('#subcategoriaCombo').empty();
+
+                // Iterar sobre los datos recibidos de la API y agregar cada opción al select
+                $.each(data, function (index, subcategoria) {
+                    $('#subcategoriaCombo').append($('<option>', {
+                        value: subcategoria.id,  // Ajusta el valor según tus necesidades
+                        text: subcategoria.nameSubCategory
+                    }));
+                });
+
+                // Activar select2 con funcionalidad de búsqueda
+                $('#subcategoriaCombo').select2({
+                    placeholder: 'Buscar subcategoría...',
+                    width: '100%'
+                });
+            },
+            error: function (error) {
+                console.error('Error al cargar subcategorías:', error);
+            }
+        });
+    }
+
+    const input = document.getElementById('fileInput');
+    const imageContainer = document.getElementById('fileInput');  // Cambiado de 'imagenes' a 'fileInput'
+
+    input.addEventListener('change', function () {
+        const files = input.files;
+
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const reader = new FileReader();
+
+            reader.onload = function () {
+                const base64String = reader.result;
+                console.log(base64String);
+            };
+
+            reader.readAsDataURL(file);
+        }
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Llenar el menú desplegable de subcategorías al cargar la página
+    cargarSubcategorias();
+    // Llenar el menú desplegable de submarcas al cargar la página
+    cargarSubmarcas();
+    $('#subcategoriaCombo').select2();
+
+    // Función para cargar subcategorías desde la API
+    function cargarSubcategorias() {
+        $.ajax({
+            url: 'http://localhost:8090/fama-market/api/subcategories/all',
+            type: 'GET',
+            success: function (data) {
+                // Limpiar opciones existentes en el menú desplegable
+                $('#subcategoriaCombo').empty();
+
+                // Iterar sobre los datos recibidos de la API y agregar cada opción al select
+                $.each(data, function (index, subcategoria) {
+                    $('#subcategoriaCombo').append($('<option>', {
+                        value: subcategoria.id,  // Ajusta el valor según tus necesidades
+                        text: subcategoria.nameSubCategory
+                    }));
+                });
+
+                // Activar select2 con funcionalidad de búsqueda
+                $('#subcategoriaCombo').select2({
+                    placeholder: 'Buscar subcategoría...',
+                    width: '100%'
+                });
+            },
+            error: function (error) {
+                console.error('Error al cargar subcategorías:', error);
+            }
+        });
+    }
+
+    // Función para cargar submarcas desde la API
+    function cargarSubmarcas() {
+        $.ajax({
+            url: 'http://localhost:8090/fama-market/api/subbrands/all',
+            type: 'GET',
+            success: function (data) {
+                // Limpiar opciones existentes en el menú desplegable de submarcas
+                $('#submarcaCombo').empty();
+
+                // Iterar sobre los datos recibidos de la API y agregar cada opción al select
+                $.each(data, function (index, submarca) {
+                    $('#submarcaCombo').append($('<option>', {
+                        value: submarca.subBrandId,  // Ajusta el valor según tus necesidades
+                        text: submarca.nameSubBrand
+                    }));
+                });
+
+                // Puedes ajustar el estilo del combo box si lo necesitas
+                $('#submarcaCombo').select2({
+                    placeholder: 'Buscar submarca...',
+                    width: '100%'
+                });
+            },
+            error: function (error) {
+                console.error('Error al cargar submarcas:', error);
+            }
+        });
+    }
+
+});

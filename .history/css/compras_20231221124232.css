@@ -1,0 +1,117 @@
+/* Estilo específico para la tabla de compras, cambiando el nombre del body */
+body.compras-body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.contenedor-productos {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+/* Resto del estilo ... */
+
+/* Estilo específico para la tabla de compras */
+.compras-body .container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #FFA500; /* Cambio de color a naranja */
+}
+
+.compras-body .container table, .compras-body .container th, .compras-body .container td {
+    border: 1px solid #ddd;
+}
+
+.compras-body .container th, .compras-body .container td {
+    padding: 12px;
+    text-align: left;
+}
+
+.compras-body .container th {
+    background-color: #333;
+    color: #fff;
+}
+
+.compras-body .container tr:hover {
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #FFA500; /* Cambio de color a naranja */
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Estilo para el texto "Entregado" en verde */
+.estatus-entregado {
+    color: green;
+}
+
+/* Estilo para las imágenes de productos */
+.producto-imagen {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+/* Estilo para los botones de modificar estatus */
+.btn-modificar {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+}

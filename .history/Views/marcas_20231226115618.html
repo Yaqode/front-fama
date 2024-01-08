@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcas</title>
+    <link rel="apple-touch-icon" href="img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="./../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../css/templatemo.css">
+    <link rel="stylesheet" href="./../css/style.css">
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="./../css/fontawesome.min.css">
+
+</head>
+
+
+
+
+<div class="container">
+    <h2 class="mb-4">Marcas</h2>
+
+    <!-- Botón para abrir el modal de agregar submarca -->
+    <button type="button" class="btn btn-success text-white mt-4" data-bs-toggle="modal"
+        data-bs-target="#modalMarca">
+        Agregar Marcas
+    </button>
+
+    <!-- Tabla para mostrar las submarcas -->
+    <table class="table" id="marcasTabla">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se agregarán las filas de submarcas dinámicamente desde el servidor -->
+        </tbody>
+    </table>
+
+</div>
+
+<!-- Modal para agregar Marca -->
+<div class="modal fade" id="modalMarca" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Marca</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Contenido del formulario para agregar marca -->
+                <form>
+                    <div class="mb-3">
+                        <label for="marcaNombre" class="form-label">Nombre de la Marca:</label>
+                        <input type="text" class="form-control" id="marcaNombre" required>
+                    </div>
+                    <label for="fileInput">Seleccionar imagen:</label>
+                    <input type="file" id="fileInput" accept="image/*">
+
+                    <div id="previewImagenes">
+                        <!-- El área para mostrar la imagen seleccionada -->
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="guardarSubcategoria()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para editar Marca -->
+<div class="modal fade" id="modalEditarMarca" tabindex="-1" role="dialog" aria-labelledby="modalEditarMarcaLabel"
+    aria-hidden="true">
+    <!-- Contenido del modal aquí -->
+    <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Editar Marca</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Contenido del formulario para agregar marca -->
+                        <form>
+                            <div class="mb-3">
+                                <label for="marcaNombre" class="form-label">Nombre de la Marca:</label>
+                                <input type="text" class="form-control" id="marcaNombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="logoInput" class="form-label">Agregar Logo:</label>
+                                <input type="file" class="form-control" id="logoInput" accept="image/*">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="guardarSubcategoria()">Guardar</button>
+                    </div>
+                </div>
+    </div>
+
+</div>
+
+<!-- Modal para eliminar submarca -->
+<div class="modal fade" id="modalEliminarMarca" tabindex="-1" role="dialog" aria-labelledby="modalEliminarMarcaLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEliminarMarcaLabel">Eliminar Marca</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+            </div>
+            <div class="modal-body">
+                <p>¿Deseas eliminar esta Marca?</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Agrega los enlaces a Bootstrap JS y Popper.js -->
+<script src="./../js/jquery-1.11.0.min.js"></script>
+<script src="./../js/bootstrap.bundle.min.js"></script>
+<script src="./../js/jquery-migrate-1.2.1.min.js"></script>
+<script src="./../js/funciones_js/marcas.js"></script>
+<script src="./../js/templatemo.js"></script>
+<script src="./../js/custom.js"></script>
+
+
+</body>
+
+</html>

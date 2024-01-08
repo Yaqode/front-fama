@@ -1,0 +1,63 @@
+
+        /* Estilos específicos para el carrito de compras */
+        .cart-container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column; /* Cambiado: Ahora es una columna */
+            gap: 20px;
+        }
+
+        .cart-title {
+            text-align: center;
+            color: #333;
+        }
+
+        .cart-items {
+            /* Cambiado: Estilo para los elementos del carrito */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cart-item {
+            /* Cambiado: Estilo específico para cada elemento del carrito */
+            width: 48%; /* Ajusta el ancho según tus necesidades */
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        /* Cambiado: Estilo para la sección de resumen del carrito */
+        .cart-summary {
+            /* Añadido: Estilo para el contenedor del resumen */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-total {
+            /* Ajustado: Estilo para el total del carrito */
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .checkout-btn {
+            /* Ajustado: Estilo para el botón de pagar */
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Nuevo estilo para el contenedor del resumen a la derecha */
+        .summary-container {
+            flex: 1; /* Hace que ocupe todo el espacio disponible */
+            margin-left: 20px; /* Ajusta según tus necesidades */
+        }
